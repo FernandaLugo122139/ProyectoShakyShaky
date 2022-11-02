@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaky Shaky</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body> 
+    <div class="container">
+
+        <form class="form" id="login">
+            <h1 class="form__title">Bienvenido a Shaky Shaky.</h1>
+            <h2 class="form__subtitle">Le recordamos que para poder usar nuestro servicio es obligatorio iniciar sesión o crear una cuenta.</h2>
+            <div class="form__mesage form__message--error"></div>
+        
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Correo o usuario">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Contraseña">
+            </div>
+
+            <button class="form__button" type="submit">Iniciar sesión</button>
+
+            <p class="form__text">
+                <a class="form__link" id="linkCreateAccount">Crear cuenta.</a>
+            </p>
+        </form>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
