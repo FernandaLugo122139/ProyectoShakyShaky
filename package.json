@@ -1,0 +1,21 @@
+{
+  "name": "shakyshaky",
+  "version": "1.0.0",
+  "description": "Proyecto general",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Héctor",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-myconnection": "^1.0.4",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
