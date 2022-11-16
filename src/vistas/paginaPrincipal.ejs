@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/login" class="navbar-brand">ShakyShaky</a>
+    </nav>
+    <% if (dataSelect.length != 0) {%>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre Coctel</th>
+            </tr>
+        </thead>
+
+
+            <% for(var i = 0; i < dataSelect.length; ++i) {%>
+                <tr>
+                    <td><a href="/coctel/<%= dataSelect[i].IdCoctel %>" ><%= dataSelect[i].Nombre %></a></td>
+                </tr>
+            <% } %>
+    </table>
+    <% } else{%>
+        <h1>No hay cocteles con ese nombre</h1>
+        <% } %>
+
+    <form action="/search" method="post">
+        <h2>Escribe aquí debajo para buscar por nombre.</h2>
+        <input type="text" name="coctelName" autofocus placeholder="Nombre de coctel">
+        <button type="submit">Buscar coctel</button>
+        <h2>Si no es lo que buscas, puedes buscar por ingrediente también.</h2>
+    </form>
+</body>
+</html>

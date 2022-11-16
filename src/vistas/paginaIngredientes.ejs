@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredientes</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/login" class="navbar-brand">ShakyShaky</a>
+    </nav>
+    <h1><%= dataSelect[0].Nombre %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ingrediente</th>
+                <th>Cantidad</th>
+                <th>Unidad</th>
+            </tr>
+        </thead>
+
+        <% if (dataSelect.length != 0) {%>
+            <% for(var i = 0; i < dataSelect.length; ++i) {%>
+                <tr>
+                    <td> <%= dataSelect[i].nombreIngrediente %> </td>
+                    <td> <%= dataSelect[i].cantidadUnidad %> </td>
+                    <td> <%= dataSelect[i].nombreUnidad %> </td>
+                    <td><a href="/delete/<%= idCoctel %>" style="color: red;">Eliminar Coctel</a></td>
+                </tr>
+            <% } %>
+        <% } %> 
+</tbody>
+    </table>
+</body>
+</html>
