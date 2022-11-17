@@ -1,0 +1,60 @@
+* {
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+.cuadroazul {
+    background: rgb(60, 153, 220);
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#logo{
+    position: absolute;
+    bottom: 30%;
+    right: 20%;
+}
+
+.form-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 55%;
+    bottom: 40%;
+
+    width: 300px;
+    padding: 40px;
+
+    text-align: center;
+
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box button[type="sumbit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+}
+
+
+
