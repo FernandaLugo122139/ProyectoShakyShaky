@@ -9,6 +9,8 @@ router.post("/login", controladorVista.validar);
 router.post("/add", controladorVista.registrarUsuario);
 router.get("/coctel/:id", controladorVista.cargarIngredientes);
 router.get("/delete/:id", controladorVista.borrarCoctel);
-router.post("/search", controladorVista.buscarNombre);
+router.post("/search/:id", controladorVista.buscarNombre);
+router.post("/searchIng/:id",controladorVista.buscarIngrediente);
+router.post("/insert/:id", controladorVista.insertarCoctel);
 
 module.exports = router;

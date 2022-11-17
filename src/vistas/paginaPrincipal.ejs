@@ -15,7 +15,7 @@
     <table>
         <thead>
             <tr>
-                <th>Nombre Coctel</th>
+                <th>Estos son tus cocteles, además de los preestablecidos.</th>
             </tr>
         </thead>
 
@@ -23,6 +23,7 @@
             <% for(var i = 0; i < dataSelect.length; ++i) {%>
                 <tr>
                     <td><a href="/coctel/<%= dataSelect[i].IdCoctel %>" ><%= dataSelect[i].Nombre %></a></td>
+                    <td><a href="/delete/<%= dataSelect[i].IdCoctel %>" style="color: red;">Eliminar Coctel</a></td>
                 </tr>
             <% } %>
     </table>
@@ -30,11 +31,27 @@
         <h1>No hay cocteles con ese nombre</h1>
         <% } %>
 
-    <form action="/search" method="post">
+    <form action="/search/<%= IdUsuario %>" method="post">
         <h2>Escribe aquí debajo para buscar por nombre.</h2>
         <input type="text" name="coctelName" autofocus placeholder="Nombre de coctel">
         <button type="submit">Buscar coctel</button>
-        <h2>Si no es lo que buscas, puedes buscar por ingrediente también.</h2>
     </form>
+
+    <h2>Si no es lo que buscas, puedes buscar por ingrediente también.</h2>
+    <button type="submit" class="add">Agregar Ingrediente</button>
+
+    <form action="/searchIng/<%= IdUsuario %>" method="post" class="formIng">
+        <button type="submit" style="margin: 5px;">Buscar por ingredientes</button>
+    </form>
+
+    <h2>Para insertar un nuevo coctel, llena el siguiente formulario: </h2>
+    <button type="submit" class="addInsert">Agregar Ingrediente</button>
+
+    <form action="/insert/<%= IdUsuario %>" method="post" class="formIns">
+        <input type="text" name="coctelName" style="width: 300px;" placeholder="Aquí escribe el nombre del coctel">
+        <button type="submit" style="margin: 5px;">Guardar Coctel</button>
+    </form>
+
+    <script src="./main2.js"></script>
 </body>
 </html>

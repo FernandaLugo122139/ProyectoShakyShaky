@@ -4,37 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingredientes</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <a href="/login" class="navbar-brand">ShakyShaky</a>
     </nav>
-    <h1><%= dataSelect[0].nombreCoctel %></h1>
+    <% if (dataSelect.length != 0) {%>
     <table>
         <thead>
             <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-                <th>Unidad</th>
+                <th>Resultados de tu búsqueda.</th>
             </tr>
         </thead>
 
-        <% if (dataSelect.length != 0) {%>
+
             <% for(var i = 0; i < dataSelect.length; ++i) {%>
                 <tr>
-                    <td> <%= dataSelect[i].Nombre %> </td>
-                    <td> <%= dataSelect[i].CantidadUnidad %> </td>
-                    <% if (dataSelect[i].IdUnidad == 1) {%>
-                        <td> ml </td>
-                        <% } else{%>
-                            <td> oz </td>
-                            <% } %>
+                    <td><a href="/coctel/<%= dataSelect[i].IdCoctel %>" ><%= dataSelect[i].Nombre %></a></td>
+                    <td><a href="/delete/<%= dataSelect[i].IdCoctel %>" style="color: red;">Eliminar Coctel</a></td>
                 </tr>
             <% } %>
-        <% } %> 
-</tbody>
     </table>
-</body>
+    <% } else{%>
+        <h1>No hay cocteles con ese nombre</h1>
+        <% } %>
+    </body>
 </html>

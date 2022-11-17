@@ -105,7 +105,7 @@ ALTER TABLE `IngredienteCoctel`
 
 ALTER TABLE `IngredienteCoctel` 
  ADD CONSTRAINT `FK_Coctel`
-	FOREIGN KEY (`IdCoctel`) REFERENCES `Coctel` (`IdCoctel`) ON DELETE No Action ON UPDATE No Action
+	FOREIGN KEY (`IdCoctel`) REFERENCES `Coctel` (`IdCoctel`) ON DELETE Cascade ON UPDATE No Action
 ;
 
 SET FOREIGN_KEY_CHECKS=1
@@ -116,3 +116,8 @@ Insert into coctel values (1,'Coca de piña',1);
 Insert into ingrediente values (1,'Coca');
 Insert into unidad values (1,'Mililitros','ml');
 Insert into IngredienteCoctel values (1,1,300,1);
+
+Insert into usuario values (2,'FerLuga','LOL','hector.quezada@lasallistas.org.mx');
+Insert into coctel values (2,'Malteada de chocolate',2);
+Insert into ingrediente values (2,'Chocolate');
+Insert into IngredienteCoctel values (2,2,100,1);
